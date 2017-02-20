@@ -1,20 +1,7 @@
 package com.ys.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-
-/**
- * 定义一个JPA使用的实体类，不需要进行关联对应的表
- * Created by yushi on 2017/2/15.
- */
-@Entity //1
-@NamedQuery(name = "Person.withNameAndAddressNamedQuery",
-        query = "select p from Person p where p.name=?1 and address=?2")
 public class Person {
-    @Id //2
-    @GeneratedValue //3
+
     private Long id;
 
     private String name;
