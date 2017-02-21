@@ -1,5 +1,10 @@
 package com.ys.bean;
 
+/**
+ * 定义一个JPA使用的实体类，不需要进行关联对应的表
+ * Created by yushi on 2017/2/15.
+ */
+
 public class Person {
 
     private Long id;

@@ -12,7 +12,7 @@ public class TestController {
 
     @RequestMapping("/test")
     public String index() {
-        return "ok";
+        return "ok ";
     }
 
 
