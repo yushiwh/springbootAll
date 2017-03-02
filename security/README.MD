@@ -1,0 +1,15 @@
+这是springboot的安全的例子
+
+安全的框架有：认证（Authentication）和授权(Authorization)
+
+认证：确认用户可以访问当前的系统
+授权：确定用户在当前的系统中所拥有的功能权限
+
+springboot主要通过SecurityAutoConfiguration和SecurityProperties来完成
+
+
+SecurityAutoConfiguration导入了SpringBootWebSecurityConfiguration的配置，我们自动获得
+1、内存中配置一个用户，user，密码在启动的时候出现
+2、忽略/css/*,/js/*,/images/*等静态文件的拦截
+3、自动配置securityFilterChainRegistration中的Bean
+我们要使用的时候，只需要继承WebSecurityConfigurerAdapter类即可，无须使用@EnableWebSecurity注解
