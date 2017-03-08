@@ -1,3 +1,6 @@
+要启动docker中的docker run -d -p 61616:61616 -p 8161:8161  cloudesire/activemq
+
+
 异步消息（发送者无须等待消费者收到处理以及返回，无须关心是否成功）
 1：消息代理（message broker）
 2：目的地（destination）
