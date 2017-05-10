@@ -6,6 +6,8 @@ import org.spring.springboot.dao.CityDao;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -133,4 +135,20 @@ public class CityServiceImpl implements CityService {
         return city;
     }
 
+
+    @CachePut(value = "othercitycache", keyGenerator = "yushiKeyGenerator")// 更新othercitycache 缓存
+    @Override
+    public Long updateCityZj(City city) {
+        Long ret = cityDao.updateCity(city);
+        LOGGER.info("更新缓存");
+        return ret;
+    }
+
+    @CacheEvict(value = "othercitycache", keyGenerator = "yushiKeyGenerator")//清空 othercitycache 缓存
+    @Override
+    public Long deleteCityZj(Long id) {
+        Long ret = cityDao.deleteCity(id);
+        LOGGER.info("清除缓存" + id);
+        return ret;
+    }
 }

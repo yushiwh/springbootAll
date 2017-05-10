@@ -51,7 +51,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         cacheManager.setDefaultExpiration(20L);
         Map<String, Long> expiresMap = new HashMap<String, Long>();
-        expiresMap.put("citycache", 5L);
+        expiresMap.put("citycache", 30L);
         cacheManager.setExpires(expiresMap);
         return cacheManager;
 //        return new RedisCacheManager(redisTemplate);

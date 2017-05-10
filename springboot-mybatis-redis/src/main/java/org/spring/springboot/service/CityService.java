@@ -54,4 +54,13 @@ public interface CityService {
 
     City findCityByIdZjOther(Long id);
 
+    /**
+     * 更新城市信息
+     *
+     * @param city
+     * @return
+     */
+    Long updateCityZj(City city);
+
+    Long deleteCityZj(Long id);
 }
