@@ -38,10 +38,16 @@
             <version>4.3.4.RELEASE</version>
         </dependency>
     <!--增加solr的配置-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
             <version>4.3.0</version>
+        </dependency>
+-->
+         <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>5.5.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
